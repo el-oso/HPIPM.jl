@@ -1,0 +1,21 @@
+name = "HPIPM_jll"
+uuid = "1df8421c-9e67-486d-aaf1-8762a7c80566"
+version = "0.1.4+0"
+
+# NOTE: This is a *local, hand-built* JLL wrapping the prebuilt tarballs in
+# `tarballs/` (built from giaf/hpipm + giaf/blasfeo via `../jll/build_tarballs.jl`).
+# It is API-compatible with the eventual Yggdrasil-registered `HPIPM_jll`, so once
+# that is published this path dependency can simply be dropped.
+#
+# The binaries are NOT auto-downloaded: run `julia setup.jl` once on each machine
+# to install the vendored artifact into the local depot (offline).
+
+[deps]
+JLLWrappers = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+
+[compat]
+JLLWrappers = "1.4"
+julia = "1.6"

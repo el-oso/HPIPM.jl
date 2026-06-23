@@ -1,0 +1,32 @@
+# Binds the HPIPM binary artifacts (libhpipm.so + headers) by content hash.
+#
+# These hashes are the git-tree-sha1 of the *unpacked* tarballs in `tarballs/`.
+# `setup.jl` installs the matching tarball into the local depot artifact store so
+# the artifact resolves OFFLINE (no download needed). The `download` URLs are
+# placeholders for the future Yggdrasil/GitHub-release publication; they are only
+# consulted if the artifact is missing from the store.
+#
+# Built for x86_64 with AVX2 (BLASFEO X64_INTEL_HASWELL). The `march` tag is
+# intentionally omitted so platform selection succeeds on any x86_64 host.
+
+[[HPIPM]]
+arch = "x86_64"
+git-tree-sha1 = "452e1bfdf3cd9e872c874a1b57429e35c3b5069a"
+libc = "glibc"
+os = "linux"
+lazy = false
+
+    [[HPIPM.download]]
+    sha256 = "a2dbda97d02210b50ae35c6345a88f5c3c86de232c6a5f0e7cd3e5677b3e555a"
+    url = "https://github.com/ursusest/HPIPM.jl/releases/download/HPIPM-v0.1.4+0/HPIPM.v0.1.4.x86_64-linux-gnu-march+avx2.tar.gz"
+
+[[HPIPM]]
+arch = "x86_64"
+git-tree-sha1 = "263971260f6b3859a6e38ff7fac06b068423966d"
+libc = "musl"
+os = "linux"
+lazy = false
+
+    [[HPIPM.download]]
+    sha256 = "3072ba91e7d9e9e0cbd60cd0600efba35bcab086424f2c8724b180ca7c3447f1"
+    url = "https://github.com/ursusest/HPIPM.jl/releases/download/HPIPM-v0.1.4+0/HPIPM.v0.1.4.x86_64-linux-musl-march+avx2.tar.gz"

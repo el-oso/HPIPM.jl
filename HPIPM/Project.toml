@@ -1,0 +1,15 @@
+name = "HPIPM"
+uuid = "3bf0b97c-cc35-4967-a19b-acfa86704cda"
+version = "0.1.0"
+authors = ["ursus.est@pm.me"]
+
+[deps]
+CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
+HPIPM_jll = "1df8421c-9e67-486d-aaf1-8762a7c80566"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+MathOptInterface = "b8f27783-ece8-5eb3-8dc8-9495eed66fee"
+
+[compat]
+CEnum = "0.5.0"
+Libdl = "1.11.0"
+MathOptInterface = "1.50.1"

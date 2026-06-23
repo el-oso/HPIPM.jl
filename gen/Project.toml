@@ -1,0 +1,3 @@
+[deps]
+Clang = "40e3b903-d033-50b4-a0cc-940c62c95e31"
+HPIPM_jll = "1df8421c-9e67-486d-aaf1-8762a7c80566"

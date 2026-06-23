@@ -1,0 +1,32 @@
+[general]
+library_name = "libhpipm"
+output_file_path = "../HPIPM/src/LibHPIPM.jl"
+module_name = "LibHPIPM"
+jll_pkg_name = "HPIPM_jll"
+
+# Only export the double-precision HPIPM/BLASFEO surface we actually use. Single
+# precision (`s_*`) is out of scope.
+export_symbol_prefixes = ["hpipm_", "blasfeo_", "d_ocp_", "d_dense_", "d_", "OCP_"]
+
+smart_de_anonymize = true
+
+# Bring in Doxygen-style header comments as docstrings (the headers carry some).
+extract_c_comment_style = "doxygen"
+
+# Drop the dead weight that the example-derived config used to wrap:
+#   ^kernel_   ~1500 BLASFEO micro-kernels — never called from a QP wrapper
+#   _ref$      ~450 BLASFEO reference fallbacks
+#   ^s_, ^blasfeo_s, ^kernel_s  single-precision API (out of scope)
+output_ignorelist = [
+    "^kernel_",
+    "_ref$",
+    "^s_",
+    "^blasfeo_s",
+    "_libstr$",
+]
+
+[codegen]
+use_ccall_macro = true            # emit modern, readable `@ccall`
+
+[codegen.macro]
+macro_mode = "basic"              # translate simple `#define` constants to consts
